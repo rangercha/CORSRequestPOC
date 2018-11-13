@@ -49,6 +49,25 @@ if (isset($_SERVER["HTTP_ORIGIN"]) === true) {
 			exit; // OPTIONS request wants only the policy, we can stop here
 		}
 	}
+	if (strpos($url,'PassreadResponseHeader') !== false) {
+
+		header('Access-Control-Allow-Origin: ' . $origin);
+		header('Access-Control-Allow-Headers: Content-Type');
+		header('Access-Control-Expose-Headers: secret_header');
+		header('secret_header: PassreadResponseHeaderAllowed');
+		if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+			exit; // OPTIONS request wants only the policy, we can stop here
+		}
+	}
+	if (strpos($url,'FailreadResponseHeader') !== false) {
+
+		header('Access-Control-Allow-Origin: ' . $origin);
+		//header('Access-Control-Allow-Headers: Content-Type');
+		header('secret_header: PassreadResponseHeaderAllowed');
+		if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+			exit; // OPTIONS request wants only the policy, we can stop here
+		}
+	}
 } else {
 	die;
 }
