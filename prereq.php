@@ -21,6 +21,9 @@ if (isset($_SERVER["HTTP_ORIGIN"]) === true) {
 		if($obj->{'object'}==1155){
 			$sensitiveGuid = 'a848a30a-0a21-4afe-a11b-09f9c83bd29b';
 		}
+		if($obj->{'object'}==1255){
+			$sensitiveGuid = '42330d52-6d87-4164-8ffd-0a44889a07b9';
+		}
 	}
 	$response = '{"sensitiveGuid":"' . $sensitiveGuid . '"}';
 	echo $response;

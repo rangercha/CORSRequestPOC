@@ -11,10 +11,9 @@ if (isset($_SERVER["HTTP_ORIGIN"]) === true) {
 		exit; // OPTIONS request wants only the policy, we can stop here
 	}
 	
-} else {
-	die;
 }
-	$authcookie = "1f3870be274f6c49b3e31a0c6728957f";
+
+ $authcookie = "1f3870be274f6c49b3e31a0c6728957f";
 	echo "{\"token\": \"$authcookie\"}";
 	setcookie("goodAuth",$authcookie);
 

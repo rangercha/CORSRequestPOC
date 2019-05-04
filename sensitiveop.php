@@ -21,6 +21,9 @@ if (isset($_SERVER["HTTP_ORIGIN"]) === true) {
 		if($obj->{'object'}==1155 && $obj->{'stateGuid'}=='a848a30a-0a21-4afe-a11b-09f9c83bd29b'){
 			$responseCode=200;
 		}
+		if($obj->{'object'}==1255 && $obj->{'stateGuid'}=='42330d52-6d87-4164-8ffd-0a44889a07b9'){
+			$responseCode=200;
+		}
 	}
 	http_response_code($responseCode);
 
